@@ -5,6 +5,8 @@ metadata:
     app: myapp
     env: dev
   name: test 
+  annotations:
+     describe: "test application"
 spec:
   containers:
   - image: 966145/myserver121:latest
@@ -22,6 +24,7 @@ spec:
     image: tomcat:latest
     ports:
     - containerPort: 8080
+  nodeName: i-06ca7deeda5df79ffqwe
 ---
 #apiVersion: v1
 #kind: Service

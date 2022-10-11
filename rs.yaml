@@ -22,6 +22,7 @@ spec:
           image: nginx:latest
           ports:
           - containerPort: 80
+#        nodeName: i-06ca7deeda5df79ff
 ---
 apiVersion: v1
 kind: Service
