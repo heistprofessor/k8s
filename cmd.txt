@@ -1,0 +1,80 @@
+    1  ls
+    2  vi pod.yaml 
+    3  vi svc.yaml 
+    4  mkdir test
+    5  mv pod.yaml svc.yaml test/
+    6  cd test/
+    7  ls
+    8  vi pod.yaml 
+    9  ls
+   10  kubectl create -f .
+   11  ls
+   12  kubectl delete -f .
+   13  ls
+   14  kubectl get pod
+   15  kubectl create -f .
+   16  kubectl get all
+   17  kubectl get pod
+   18  kubectl describe pod test 
+   19  kubectl get pod
+   20  kubectl logs test 
+   21  kubectl get pod
+   22  kubectl exec -it test -- bash
+   23  kubectl get pod
+   24  kubectl delete -f .
+   25  vi pod.yaml 
+   26  kubectl create -f pod.yaml 
+   27  kubectl get pod
+   28  kubectl describe pod test 
+   29  kubectl get pod
+   30  kubectl describe pod test 
+   31  kubectl get pod
+   32  kubectl exec -it test -c con1 -- bash
+   33  kubectl exec -it test -c con2 -- bash
+   34  kubectl get pod
+   35  kubectl logs test -c con1
+   36  kubectl logs test -c con2
+   37  kubectl get pod
+   38  vi pod.yaml 
+   39  kubectl apply -f pod.yaml 
+   40  vi pod.yaml 
+   41  kubectl apply -f pod.yaml 
+   42  kubectl get pod
+   43  kubectl describe pod test 
+   44  kubectl get svc
+   45  kubectl create -f svc.yaml 
+   46  vi pod.yaml 
+   47  kubectl get pod
+   48  kubectl edit pod test 
+   49  kubectl get pod
+   50  kubectl describe pod test 
+   51  history 
+   52  git pull git@github.com:eraneeshansari/k8s.git
+   53  git fetch git@github.com:eraneeshansari/k8s.git
+   54  git init 
+   55  git pull git@github.com:eraneeshansari/k8s.git
+   56  git fetch git@github.com:eraneeshansari/k8s.git
+   57  ssh-keygen 
+   58  cd
+   59  cd .ssh/
+   60  ls
+   61  cat id_rsa.pub 
+   62  cd -
+   63  cd test/
+   64  git pull git@github.com:eraneeshansari/k8s.git
+   65  ls
+   66  git add .
+   67  git commit -m "first commit"
+   68  git config --global --edit
+   69  git commit -m "first commit"
+   70  git push origin main
+   71  git branch
+   72  git branch -M main
+   73  git branch
+   74  git push origin main
+   75  git add origin git@github.com:eraneeshansari/k8s.git
+   76  git remote add origin git@github.com:eraneeshansari/k8s.git
+   77  git push origin main
+   78  vi gitt.sh
+   79  chmod +x gitt.sh 
+   80  history > cmd.txt
