@@ -24,13 +24,14 @@ spec:
     image: tomcat:latest
     ports:
     - containerPort: 8080
+  nodeSelector:
+    kubernetes.io/hostname: i-0d6f954736df93fe2
   tolerations:
-  - key: node-role.kubernetes.io/control-plane
-    operator: Exists
-    effect: NoSchedule
+  - key: "node-role.kubernetes.io/control-plane"
+    operator: "Exists"
+    effect: "NoSchedule"
 
       # node-role.kubernetes.io/control-plane:NoSchedule
-      
 ---
 #apiVersion: v1
 #kind: Service
