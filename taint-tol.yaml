@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: myapp
+    env: dev
+  name: taint-tol-pod
+  annotations:
+     describe: "test application"
+spec:
+  containers:
+  - image: 966145/myserver121:latest
+    name: con1
+    ports:
+    - containerPort: 80
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "90m"
+      limits:
+        memory: "128Mi"
+        cpu: "180m"
+  - name: con2
+    image: tomcat:latest
+    ports:
+    - containerPort: 8080
+  tolerations:
+  - key: taint
+    operator: Equal
+    value: green
+    effect: NoExecute
+---
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: test-svc
+#spec:
+#  ports:
+#  - port: 80
+#    nodePort: 30123
+#  selector:
+#    app: myapp
+#  type: NodePort
