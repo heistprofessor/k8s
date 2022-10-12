@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-    app: myapp
-  name: test 
+    env: dev
+  name: pod-aff-pref
   annotations:
      describe: "test application"
 spec:
@@ -23,16 +23,16 @@ spec:
     image: tomcat:latest
     ports:
     - containerPort: 8080
-      #  nodeName: i-06ca7deeda5df79ffqwe
----
-#apiVersion: v1
-#kind: Service
-#metadata:
-#  name: test-svc
-#spec:
-#  ports:
-#  - port: 80
-#    nodePort: 30123
-#  selector:
-#    app: myapp
-#  type: NodePort
+  affinity:
+    podAntiAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 100
+        podAffinityTerm:
+          labelSelector:
+            matchExpressions:
+            - key: app
+              operator: In
+              values:
+              - myapp
+          topologyKey: kubernetes.io/hostname
+  
