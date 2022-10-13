@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: myapp
+  name: pvc-pod 
+  annotations:
+     describe: "test application"
+spec:
+  containers:
+  - image: 966145/myserver121:latest
+    name: con1
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: myvol
+      mountPath: /data
+  volumes:
+  - name: myvol
+    persistentVolumeClaim:
+        claimName: myclaim 
