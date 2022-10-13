@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mywp
+data:
+  WORDPRESS_DB_HOST: dbapp-svc
+  WORDPRESS_DB_NAME: wordpress
+  WORDPRESS_DB_PASSWORD: test123
+  WORDPRESS_DB_USER: root
+  WORDPRESS_TABLE_PREFIX: wp_
